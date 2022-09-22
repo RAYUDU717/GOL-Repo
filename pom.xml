@@ -7,14 +7,14 @@
     <packaging>pom</packaging>
     <name>gameoflife</name>
     <url>https://github.com/wakaleo/game-of-life</url>
-    <properties>   
+    <properties>
         <build.number>SNAPSHOT</build.number>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <easyb.version>1.4</easyb.version>
         <cobertura.version>2.6</cobertura.version>
         <!-- A workaround for a bug in PMD -->
-       <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target> 
+        <sourceJdk>1.8</sourceJdk>
+        <targetJdk>1.8</targetJdk>
         <github.account>wakaleo</github.account>
         <thucydides.version>1.8.4</thucydides.version>
         <jelastic.context>gameoflife</jelastic.context>
@@ -29,24 +29,13 @@
     <build>
         <plugins>
             <plugin>
-                 <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                     <version>3.8.1</version>
-                       <configuration>
-                     <source>11</source>
-                   <target>11</target>
-                   </configuration>
-               </plugin>
-		<plugin>
-    <artifactId>maven-surefire-plugin</artifactId>
-    <version>${maven.surefire.version}</version>
-    <configuration>
-        <includes>
-            <include>TestFail.java</include>
-        </includes>
-        <testFailureIgnore>true</testFailureIgnore>
-    </configuration>
-                 </plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.11</version>
@@ -197,12 +186,6 @@
         </dependencies>
     </dependencyManagement>
     <dependencies>
-	    <dependency>
-  <groupId>org.springframework.boot</groupId>
-  <artifactId>spring-boot-dependencies</artifactId>
-  <version>2.3.4.RELEASE</version>
-  <type>pom</type>
-            </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
