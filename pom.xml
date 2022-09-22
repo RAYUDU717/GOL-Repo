@@ -27,6 +27,16 @@
         <url>scm:git:git@github.com:${github.account}/game-of-life.git</url>
     </scm>
     <build>
+	    <build>
+      <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-war-plugin</artifactId>
+            <version>3.3.1</version>
+        </plugin>
+    </plugins>
+    <finalName>project name</finalName>
+</build>
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
